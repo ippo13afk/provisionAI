@@ -1,0 +1,121 @@
+*{
+    background-color: black;
+}
+.navbar{
+    /* border: 1px white solid; */
+    height:100px;
+    width:100%; 
+}
+
+.name{
+    margin-left:10px;
+    font-size: 24px;
+    color: white;
+}
+a{
+    font-size: 20px;
+    margin-top: 10px;
+    color:white;
+    text-decoration: none;
+
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu{
+    margin-top:20px;
+    /* border:1px white solid; */
+    height:50px;
+    width:700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.butt1{
+    margin-left:5px;
+    margin-top:5px;
+    background-color:white;
+    height:30px;
+    width:100px;
+    text-align: center;
+    font-size: 20px;
+    color:black;
+    border:black;
+    border-radius: 10px;
+}
+.body{
+    /* border:1px white solid; */
+    width:100%;
+    height:400px;
+    display: flex;
+    flex-direction: column;
+}
+.body .unlock{
+    margin-top:50px;
+}
+.unlock{
+    margin-top:100px;
+    margin: 0 auto;
+    /* border:1px white solid; */
+    height:50px;
+    width:300px;
+    text-align: center;
+    color:white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px white;
+    font-size: 17px;
+}
+.heading{
+    margin: 0px auto;
+    height:80px;
+    width: 1200px;
+    /* border:1px whi   te solid; */
+    color: white;
+    font-size:54px;
+    font-weight: 400;
+    line-height: 50px;
+    margin-top:40px;
+}
+.text{
+    /* border: 1px white solid; */
+    width:50%;
+    margin: 0px auto;
+}
+.text p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: white;
+    font-style: normal;
+}
+.body img{
+    position: absolute;
+    margin-left:100px;
+    margin:0px auto;
+    height: 400px;
+    width:400px;
+    margin-left:450px;
+    border-radius: 40%;
+    opacity:0.3 ;
+}
+.features{
+    border:1px white solid;
+    height:500px;
+}
+h1{
+    margin: 0px;
+    margin-left:400px;
+    color: white;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 48px;
+}
+
+.box{
+    border:1px white solid;
+    height:300px;
+    width:250px;
+}
+

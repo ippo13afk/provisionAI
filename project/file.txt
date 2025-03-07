@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Description Generator</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* White text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #1e1e1e; /* Slightly lighter background for the container */
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        .upload-section {
+            margin-top: 30px;
+        }
+
+        .upload-label {
+            font-size: 18px;
+            background-color: #333333; /* Dark button */
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-label:hover {
+            background-color: #444444; /* Slightly lighter on hover */
+        }
+
+        .upload-section input[type="file"] {
+            display: none;
+        }
+
+        .upload-section button {
+            background-color: #333333;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-section button:hover {
+            background-color: #444444;
+        }
+
+        .image-preview {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #preview {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .description-section {
+            margin-top: 40px;
+            text-align: left;
+            padding: 20px;
+            background-color: #333333; /* Dark background for the description */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        .description-section h2 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .description-section p {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Image Description Generator</h1>
+            <p>Upload an image to get a detailed description powered by AI.</p>
+        </div>
+
+        <!-- Image Upload Section -->
+        <div class="upload-section">
+            <label for="imageUpload" class="upload-label">Choose Image</label>
+            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage()" />
+            <button id="generateButton" onclick="generateDescription()">Generate Description</button>
+            
+            <div id="imagePreview" class="image-preview">
+                <img id="preview" src="" alt="Image preview" />
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="description-section" id="descriptionSection">
+            <h2>Description:</h2>
+            <p id="descriptionText">Your image description will appear here after uploading and processing.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to preview the uploaded image
+        function previewImage() {
+            const file = document.getElementById("imageUpload").files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function() {
+                const previewImage = document.getElementById("preview");
+                previewImage.src = reader.result;
+                document.getElementById("imagePreview").style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                document.getElementById("imagePreview").style.display = 'none';
+            }
+        }
+
+        // Function to simulate the description generation
+        function generateDescription() {
+            const descriptionText = document.getElementById("descriptionText");
+
+            // Placeholder description (simulating an AI-generated description)
+            descriptionText.innerHTML = "This is a placeholder description of your image. Imagine this text is generated by AI recognizing objects in the image. For example, it might describe a cat sitting on a couch or a mountain landscape with clouds.";
+
+            // Show the description section
+            document.getElementById("descriptionSection").style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Description Generator</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* White text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #1e1e1e; /* Slightly lighter background for the container */
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        .upload-section {
+            margin-top: 30px;
+        }
+
+        .upload-label {
+            font-size: 18px;
+            background-color: #333333; /* Dark button */
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-label:hover {
+            background-color: #444444; /* Slightly lighter on hover */
+        }
+
+        .upload-section input[type="file"] {
+            display: none;
+        }
+
+        .upload-section button {
+            background-color: #333333;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-section button:hover {
+            background-color: #444444;
+        }
+
+        .image-preview {
+            margin-top: 20px;
+            display: none;
+        }
+
+        #preview {
+            max-width: 100%;
+            max-height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .description-section {
+            margin-top: 40px;
+            text-align: left;
+            padding: 20px;
+            background-color: #333333; /* Dark background for the description */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        .description-section h2 {
+            font-size: 24px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .description-section p {
+            font-size: 16px;
+            color: #cccccc;
+            line-height: 1.5;
+        }
+
+        .prompt-section {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .prompt-section input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Image Description Generator</h1>
+            <p>Upload an image and/or enter a custom prompt to get a description.</p>
+        </div>
+
+        <!-- Image Upload Section -->
+        <div class="upload-section">
+            <label for="imageUpload" class="upload-label">Choose Image</label>
+            <input type="file" id="imageUpload" accept="image/*" onchange="previewImage()" />
+            <button id="generateButton" onclick="generateDescription()">Generate Description</button>
+            
+            <div id="imagePreview" class="image-preview">
+                <img id="preview" src="" alt="Image preview" />
+            </div>
+        </div>
+
+        <!-- Custom Prompt Section -->
+        <div class="prompt-section">
+            <label for="userPrompt">Enter Your Prompt (Optional)</label>
+            <input type="text" id="userPrompt" placeholder="Enter a custom prompt here..." />
+        </div>
+
+        <!-- Description Section -->
+        <div class="description-section" id="descriptionSection">
+            <h2>Description:</h2>
+            <p id="descriptionText">Your image description will appear here after uploading and processing.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to preview the uploaded image
+        function previewImage() {
+            const file = document.getElementById("imageUpload").files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = function() {
+                const previewImage = document.getElementById("preview");
+                previewImage.src = reader.result;
+                document.getElementById("imagePreview").style.display = 'block';
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                document.getElementById("imagePreview").style.display = 'none';
+            }
+        }
+
+        // Function to simulate the description generation
+        function generateDescription() {
+            const descriptionText = document.getElementById("descriptionText");
+            const userPrompt = document.getElementById("userPrompt").value.trim();
+
+            if (userPrompt) {
+                // If the user has entered a custom prompt, use it
+                descriptionText.innerHTML = `Custom Prompt: ${userPrompt}`;
+            } else {
+                // Placeholder description (simulating an AI-generated description)
+                descriptionText.innerHTML = "This is a placeholder description of your image. Imagine this text is generated by AI recognizing objects in the image. For example, it might describe a cat sitting on a couch or a mountain landscape with clouds.";
+            }
+
+            // Show the description section
+            document.getElementById("descriptionSection").style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
